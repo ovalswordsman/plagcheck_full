@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+public/favicon.ico
+src/App.css
+src/Components/StudentHome.js
+public/logo512.png
+public/logo192.png
+public/favicon.ico
+public/robots.txt
+src/App.test.js
+src/index.css
+src/logo.svg
+src/reportWebVitals.js
+src/setupTests.js
