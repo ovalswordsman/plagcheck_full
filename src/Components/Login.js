@@ -3,8 +3,8 @@ import "../Css/login.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate()
-   
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,15 +22,14 @@ const Login = () => {
       }),
     });
 
-    const data = res.json();
-
-    if(res.status === 400 || !data){
-      window.alert("Invalid Credentials")
-    } else{
-      window.alert("Success")
-      navigate("/")
+    const data = await res.json();
+    console.log(data.role);
+    if (res.status === 400 || !data) {
+      window.alert("Invalid Credentials");
+    } else {
+      if (data.role === "student") navigate("/studenthome");
+      else navigate("teacherhome");
     }
-
   };
 
   return (

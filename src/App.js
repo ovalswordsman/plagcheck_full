@@ -13,6 +13,7 @@ import Register from "./Components/Register";
 import Guest from "./Components/Guest";
 import Support from "./Components/Support";
 import Error from "./Components/Error";
+import StudentHome from "./Components/StudentHome";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/guest" element={<Guest />} />
           <Route path="/support" element={<Support />} />
+          <Route path='/studenthome' element={<StudentHome />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
