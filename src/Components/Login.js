@@ -27,6 +27,7 @@ const Login = () => {
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
     } else {
+      
       if (data.role === "student") navigate("/studenthome");
       else navigate("teacherhome");
     }
