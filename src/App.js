@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useReducer } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import TeacherHome from "./Components/TeacherHome";
 // import TeacherSecond from "./Components/TeacherSecond";
@@ -14,25 +14,31 @@ import Guest from "./Components/Guest";
 import Support from "./Components/Support";
 import Error from "./Components/Error";
 import StudentHome from "./Components/StudentHome";
+import { initialState, reducer } from "./reducer/UseReducer";
+import Logout from "./Components/Logout";
 
+//1. Context API
+export const UserContext = createContext();
 function App() {
-  //1. Context API
-   const UserContext = createContext();
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/guest" element={<Guest />} />
-          <Route path="/support" element={<Support />} />
-          <Route path='/studenthome' element={<StudentHome />} />
-          <Route path='/teacherhome' element={<TeacherHome />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
+        <UserContext.Provider value={{ state, dispatch }}>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/guest" element={<Guest />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/studenthome" element={<StudentHome />} />
+            <Route path="/teacherhome" element={<TeacherHome />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </UserContext.Provider>
       </BrowserRouter>
 
       {/* <StudentHome /> */}

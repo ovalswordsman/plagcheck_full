@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../Css/navbar.css";
 import { Link } from "react-router-dom";
-
+import { UserContext } from "../App";
 const Navbar = () => {
+  const { state, dispatch } = useContext(UserContext);
+
+  const RenderMenu = () => {
+    if (state) {
+      return (
+        <div className="btn d-flex">
+          <Link className="nav-link" to="/studenthome">
+            <li>MyProfile</li>
+          </Link>
+          <Link className="nav-link" to="/support">
+            <li>Support</li>
+          </Link>
+          <Link className="nav-link" to="/logout">
+            <li>Logout</li>
+          </Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="btn d-flex">
+          <Link className="nav-link" to="/login">
+            <li>Login</li>
+          </Link>
+
+          <Link className="nav-link" to="/register">
+            <li>Register</li>
+          </Link>
+          <Link className="nav-link" to="/support">
+            <li>Support</li>
+          </Link>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <nav className="main-nav">
@@ -15,17 +50,7 @@ const Navbar = () => {
           </h2>
         </div>
 
-        <div className="btn d-flex">
-          <Link className="nav-link" to="/login">
-            <li>Login</li>
-          </Link>
-          <Link className="nav-link" to="/register">
-            <li>Register</li>
-          </Link>
-          <Link className="nav-link" to="/support" >
-            <li>Support</li>
-          </Link>
-        </div>
+        <RenderMenu />
       </nav>
     </>
   );

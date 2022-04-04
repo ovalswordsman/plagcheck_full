@@ -182,7 +182,7 @@ body {
 
 .forgot a:hover {
   transform: scale(1.2);
-}
+} */
 
 /* Error page button */
 .login-error {
@@ -217,3 +217,5 @@ body {
   margin-left: auto;
   color: #7875b5;
 }
+
+

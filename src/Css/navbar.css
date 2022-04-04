@@ -9,10 +9,9 @@
 
 html {
   font-size: 62.5%;
-}
+} 
 /* navbar style start  */
-
-.main-nav {
+ .main-nav {
   position: fixed;
   width: 100%;
   height: 6rem;
@@ -62,6 +61,6 @@ html {
 
 .logo h2 span {
   font-size: 3.5rem;
-}
+} 
 
 

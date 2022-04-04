@@ -1,0 +1,137 @@
+.guest-home {
+  
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(
+      180deg,
+      rgba(78, 223, 255, 0.188) 17.95%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    #ffffff;
+  border: 1px solid #73c8d3;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(145, 224, 241, 0.66);
+  z-index: 0;
+}
+
+.icon {
+  padding: 20px;
+  display: inline-block;
+}
+
+.type-box {
+  position: absolute;
+  width: 1000px;
+  height: 180px;
+  left: 220px;
+  top: 160px;
+
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  vertical-align: top;
+  font-family: "Sedan SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #6f6262;
+}
+.upload {
+  position: absolute;
+  width: 175px;
+  height: 35px;
+  left: 220px;
+  top: 350px;
+
+  background: url(../Images_copy/Screenshot\ 2022-03-10\ 115845.png);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.icon{
+    cursor: pointer;
+}
+
+.guest-image {
+  position: absolute;
+  width: 700px;
+  height: 400px;
+  left: 360px;
+  top: 400px;
+  outline: none;
+  z-index: 0;
+
+  /* background: url(../Images_copy/plagiarism-concept-with-man-stealing-ideas_23-2148422590.png); */
+}
+.scan1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  position: absolute;
+  width: 312px;
+  height: 72px;
+  left: 313px;
+  top: 400px;
+
+  background: rgba(78, 223, 255, 0.47);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+
+  font-family: "Secular One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  /* identical to box height */
+
+  color: #004360;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+
+  z-index: 1;
+}
+
+.scan2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  position: absolute;
+  width: 312px;
+  height: 72px;
+  left: 855px;
+  top: 400px;
+
+  background: rgba(78, 223, 255, 0.47);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+
+  font-family: "Secular One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  /* identical to box height */
+  color: #004360;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+
+  z-index: 1;
+}
