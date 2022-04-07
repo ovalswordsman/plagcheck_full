@@ -84,7 +84,7 @@ const Support = () => {
                 id="exampleFormControlTextarea1"
                 rows="10"
                 placeholder="Message"
-              ></textarea>
+              style={{height:"310px"}}></textarea>
             </div>
             <button type="button" class="btn btn-info mb-4">Send Message</button>
           </div>

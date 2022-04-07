@@ -2,18 +2,23 @@ import React, { useContext } from "react";
 import "../Css/navbar.css";
 import { Link } from "react-router-dom";
 import { UserContext } from "../App";
-const Navbar = () => {
+const Navbar = (props) => {
   const { state, dispatch } = useContext(UserContext);
+  
+  const path = props.userData.role==='student' ? `/studenthome` : `/teacherhome`
 
   const RenderMenu = () => {
     if (state) {
       return (
         <div className="btn d-flex">
-          <Link className="nav-link" to="/studenthome">
+          <Link className="nav-link" to={path}>
             <li>MyProfile</li>
           </Link>
           <Link className="nav-link" to="/support">
             <li>Support</li>
+          </Link>
+          <Link className="nav-link" to={`${path}/classes`}>
+            <li>Classes</li>
           </Link>
           <Link className="nav-link" to="/logout">
             <li>Logout</li>

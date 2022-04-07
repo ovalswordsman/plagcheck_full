@@ -3,10 +3,10 @@ import "../Css/login.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
 
-const Login = () => {
+const Login = (props) => {
   const navigate = useNavigate();
 
-  const {state, dispatch} = useContext(UserContext)
+  const { state, dispatch } = useContext(UserContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,13 +26,15 @@ const Login = () => {
     });
 
     const data = await res.json();
+
     console.log(data.role);
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
     } else {
-      dispatch({type:'USER', payload:true})
-      if (data.role === "student") navigate("/studenthome");
-      else navigate("/teacherhome");
+      dispatch({ type: "USER", payload: true });
+      props.setUserData(data);
+      if (data.role === "student") navigate("/studenthome/classes");
+      else navigate("/teacherhome/classes");
     }
   };
 

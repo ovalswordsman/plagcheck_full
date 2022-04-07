@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Css/studenthome.css";
-import SideBar from "./Sidebar";
+
 
 const StudentHome = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const StudentHome = () => {
   }, []);
   return (
     <section className="section about-section gray-bg" id="about">
-      <SideBar />
+     
       <div className="container">
         <div className="row align-items-center mb-3 flex-row-reverse">
           <div className="col-lg-6">
