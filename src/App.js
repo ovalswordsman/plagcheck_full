@@ -38,8 +38,8 @@ function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/studenthome" element={<StudentHome />} />
             <Route path="/teacherhome" element={<TeacherHome />} />
-            <Route path="/teacherhome/classes" element={<ClassT />} />
-            <Route path="/studenthome/classes" element={<ClassS />} />
+            <Route path="/teacherhome/classes" element={<ClassT userData={userData}/>} />
+            <Route path="/studenthome/classes" element={<ClassS userData={userData}/>} />
             <Route path="/logout" element={<Logout />} />
             <Route path="*" element={<Error />} />
           </Routes>

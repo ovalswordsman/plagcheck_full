@@ -55,7 +55,7 @@ const TeacherHome = () => {
                 <div className="col-md-6">
                   <div className="media">
                     <label>E-mail</label>
-                    <p>info@domain.com</p>
+                    <p>{userData.email}</p>
                   </div>
                   <div className="media">
                     <label>Phone</label>
