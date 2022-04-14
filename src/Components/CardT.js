@@ -2,15 +2,24 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Css/card.scss";
 
-const Card = (props) => {
+const CardT = (props) => {
   const navigate = useNavigate();
-  const {name, title, code} = props.item
+  const { name, title, code } = props.item;
+
   return (
-    <div className="cardBox">
+    <div
+      className="cardBox"
+      onClick={() => {
+        navigate("/teacherhome/classes/assignment", {
+          state: props.item,
+        });
+      }}
+    >
       <div className="cardBoxHeader">
         <img
           className="cardBoxImg"
           src={"https://www.gstatic.com/classroom/themes/Honors.jpg"}
+          alt='img'
         ></img>
         <div className="cardTitle">{title}</div>
         <div>{code}</div>
@@ -22,4 +31,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default CardT;

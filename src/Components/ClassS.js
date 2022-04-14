@@ -1,10 +1,11 @@
 import React from "react";
-import Card from "./Card";
+import CardS from "./CardS";
 import classes from "./Class";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
 const ClassS = (props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const [userClass, setUserClass] = useState([]);
   const [submit, setSubmit] = useState(false);
   const [classCode, setClassCode] = useState({
     code: "",
@@ -32,14 +33,40 @@ const ClassS = (props) => {
     });
     const data = await res.json();
     console.log(data);
+    console.log(userClass)
 
     if (res.status === 422 || !data) {
-      window.alert("Class does not exists!");
+      window.alert("Class does not exists or already joined!");
     } else {
       window.alert("Successful");
-      setSubmit(false)
+      setUserClass((prev) => {
+        return [...prev, data.class];
+      });
+      setSubmit(false);
     }
   };
+  //Fetching the class details of respective user
+  const homePage = async () => {
+    try {
+      const res = await fetch("/studenthome/classes", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+        credentials: "include",
+      });
+      const classList = await res.json();
+      console.log("I am here")
+      console.log(classList);
+      setUserClass(classList.classList);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    homePage();
+  }, []);
 
   return (
     <>
@@ -70,8 +97,8 @@ const ClassS = (props) => {
         </div>
       )}
       <div className="card-item" id="card-item">
-        {classes.map((item, index) => (
-          <Card item={item} key={index} />
+        {userClass.map((item, index) => (
+          <CardS item={item} key={index} />
         ))}
       </div>
     </>

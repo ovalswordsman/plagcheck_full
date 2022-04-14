@@ -5,10 +5,9 @@
   height: 90vh;
 }
 .container {
-  
   justify-content: center;
 }
-.container .row{
+.container .row {
   padding-top: 140px;
 }
 
@@ -126,4 +125,78 @@ mark {
 }
 .dark-color {
   color: #20247b;
+}
+/* -------------------------------------------------------- */
+/* second page */
+/* -------------------------------------------------------- */
+
+.teacher-second {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2 * 1.5rem);
+  max-width: 70.5rem;
+  min-height: 100vh;
+}
+.teacher-second .class-heading {
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  height: 15rem;
+  position: relative;
+  width: 100%;
+  background-color: white;
+  background: rgb(6, 100, 100);
+  background: linear-gradient(
+    356deg,
+    rgba(6, 100, 100, 1) 0%,
+    rgba(225, 231, 240, 1) 0%
+  );
+}
+.teacher-second .class-heading .class-name {
+  bottom: 20;
+  color: black;
+  left: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  right: 0;
+  font-size: 23px;
+  font-weight: bold;
+}
+.teacher-second .class-heading .class-title {
+  bottom: 0;
+  color: black;
+  left: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  right: 0;
+  font-size: larger;
+  font-weight: bold;
+}
+.body-data {
+  display: flex;
+  margin-top: 1.5rem;
+}
+.main-data {
+  padding-left: 2px;
+  box-flex: 1;
+  flex-grow: 1;
+}
+.main-data .assignment {
+  padding-left: 8px;
+  border: 1px solid rgba(190, 178, 178, 0.562);
+}
+.main-data .assignment .footer {
+ 
+  color: black;
+  position: relative;
+  font-size: larger;
+  font-weight: bold;
+}
+@media not all and (max-width: 48.75em) {
+  .main-data {
+    overflow: hidden;
+    margin: -1rem;
+    padding: 1rem;
+  }
 }

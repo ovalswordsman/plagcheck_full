@@ -1,8 +1,6 @@
 import React from "react";
-import Card from "./Card";
+import CardT from "./CardT";
 import { useState, useEffect } from "react";
-
-
 
 const ClassT = (props) => {
   //props includes email and role
@@ -12,10 +10,9 @@ const ClassT = (props) => {
     title: "",
     code: "",
   });
-  const [submit,setSubmit] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
   //Setting the classDetails input by user
-
 
   let n, value;
   const handleInputs = (e) => {
@@ -48,9 +45,9 @@ const ClassT = (props) => {
       window.alert("Fill data correclty / Class already exists");
     } else {
       window.alert("Successful");
-      setUserClass(prev=>{
-        return [...prev,data.class]
-      })
+      setUserClass((prev) => {
+        return [...prev, data.class];
+      });
       setSubmit(false);
     }
   };
@@ -69,7 +66,6 @@ const ClassT = (props) => {
       const classList = await res.json();
       console.log(classList);
       setUserClass(classList.classList);
-      console.log(userClass);
     } catch (err) {
       console.log(err);
     }
@@ -81,52 +77,65 @@ const ClassT = (props) => {
   return (
     <>
       <div className="classT-btn">
-        <button onClick={()=>{setSubmit(true)}}>Create Class</button>
+        <button
+          onClick={() => {
+            setSubmit(true);
+          }}
+        >
+          Create Class
+        </button>
       </div>
-      {submit&&<div className="form-popup" id="myForm">
-        <form className="form-container">
-          <h1>Create Class</h1>
+      {submit && (
+        <div className="form-popup" id="myForm">
+          <form className="form-container">
+            <h1>Create Class</h1>
 
-          <label htmlFor="name">
-            <b>Class Name</b>
-          </label>
-          <input
-            type="text"
-            onChange={handleInputs}
-            placeholder="Enter Class Name"
-            name="name"
-          />
+            <label htmlFor="name">
+              <b>Class Name</b>
+            </label>
+            <input
+              type="text"
+              onChange={handleInputs}
+              placeholder="Enter Class Name"
+              name="name"
+            />
 
-          <label htmlFor="class-code">
-            <b>Class title</b>
-          </label>
-          <input
-            type="text"
-            onChange={handleInputs}
-            placeholder="Enter Class title"
-            name="title"
-          />
-          <label htmlFor="class-code">
-            <b>Class Code (Should be Unique)</b>
-          </label>
-          <input
-            type="text"
-            onChange={handleInputs}
-            placeholder="Enter Class Code"
-            name="code"
-          />
+            <label htmlFor="class-code">
+              <b>Class title</b>
+            </label>
+            <input
+              type="text"
+              onChange={handleInputs}
+              placeholder="Enter Class title"
+              name="title"
+            />
+            <label htmlFor="class-code">
+              <b>Class Code (Should be Unique)</b>
+            </label>
+            <input
+              type="text"
+              onChange={handleInputs}
+              placeholder="Enter Class Code"
+              name="code"
+            />
 
-          <button className="btn" onClick={postData}>
-            Submit
-          </button>
-          <button className="btn cancel" onClick={()=>{setSubmit(false)}}>
-            Close
-          </button>
-        </form>
-      </div>}
+            <button className="btn" onClick={postData}>
+              Submit
+            </button>
+            <button
+              className="btn cancel"
+              onClick={() => {
+                setSubmit(false);
+              }}
+            >
+              Close
+            </button>
+          </form>
+        </div>
+      )}
       <div className="card-item" id="card-item">
         {userClass.map((item, index) => (
-          <Card item={item} key={index} />
+          <CardT item={item} key={index} />
         ))}
       </div>
     </>

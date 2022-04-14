@@ -33,3 +33,4 @@ src/index.css
 src/logo.svg
 src/reportWebVitals.js
 src/setupTests.js
+src/Components/Card.js

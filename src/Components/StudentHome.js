@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Css/studenthome.css";
 
-
 const StudentHome = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState("");
@@ -30,7 +29,6 @@ const StudentHome = () => {
   }, []);
   return (
     <section className="section about-section gray-bg" id="about">
-     
       <div className="container">
         <div className="row align-items-center mb-3 flex-row-reverse">
           <div className="col-lg-6">
@@ -40,30 +38,18 @@ const StudentHome = () => {
               <div className="row about-list">
                 <div className="col-md-6">
                   <div className="media">
-                    <label>Batch</label>
-                    <p>3rd</p>
-                  </div>
-                  <div className="media">
-                    <label>Roll Number</label>
-                    <p>1901096</p>
-                  </div>
-                  <div className="media">
-                    <label>Branch</label>
-                    <p>CSE</p>
+                    <label>User ID</label>
+                    <p>{userData.roll_no}</p>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="media">
                     <label>E-mail</label>
-                    <p>info@domain.com</p>
+                    <p>{userData.email}</p>
                   </div>
                   <div className="media">
                     <label>Phone</label>
-                    <p>820-885-3321</p>
-                  </div>
-                  <div className="media">
-                    <label>Group</label>
-                    <p>CS21</p>
+                    <p>*********</p>
                   </div>
                 </div>
               </div>
